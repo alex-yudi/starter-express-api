@@ -45,7 +45,7 @@ const bd = [
 ]
 
 app.use(cors())
-app.get('/items', (req, res) => {
+app.get('/', (req, res) => {
     res.send(bd)
 })
 app.listen(process.env.PORT || 3000)
