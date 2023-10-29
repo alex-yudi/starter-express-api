@@ -1,4 +1,5 @@
 const express = require('express')
+import cors from 'cors';
 const app = express()
 
 const bd = [
@@ -43,6 +44,8 @@ const bd = [
         }
     ]
 
+app.use(cors())
+app.use(express.json())
 app.all('/', (req, res) => {
     res.send(bd)
 })
