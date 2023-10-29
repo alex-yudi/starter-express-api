@@ -45,7 +45,6 @@ const bd = [
 ]
 
 app.use(cors())
-app.use(express.json())
 app.get('/items', (req, res) => {
     res.send(bd)
 })
