@@ -44,8 +44,48 @@ const bd = [
     }
 ]
 
+const list = [
+    {
+        "id": 1,
+        "title": "Produto 1",
+    },
+    {
+        "id": 2,
+        "title": "Produto 1",
+    },
+    {
+        "id": 3,
+        "title": "Produto 1",
+    },
+    {
+        "id": 4,
+        "title": "Produto 1",
+    },
+    {
+        "id": 5,
+        "title": "Produto 1",
+    }
+]
+
 app.use(cors())
 app.get('/', (req, res) => {
     res.send(bd)
 })
+
+app.get('/list-products', (req, res) => {
+    res.send(list)
+})
+
+app.post('/list-products', (req, res) => {
+    const { product: newProduct } = req.body;
+
+    list.push({
+        ...newProduct,
+        id: 6,
+    })
+    id++;
+
+    res.send(list)
+})
+
 app.listen(process.env.PORT || 3000)
